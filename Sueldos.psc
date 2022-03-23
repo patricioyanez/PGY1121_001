@@ -27,6 +27,14 @@ Algoritmo Sueldos
 	
 	// ver solucion con Y
 	
-	
+	si sueldo1 > sueldo2 y sueldo1 > sueldo3 Entonces
+		Escribir "*El sueldo 1 es el mayor"
+	SiNo
+		si sueldo2 > sueldo3 Entonces
+			Escribir "*El sueldo 2 es el mayor"
+		SiNo
+			Escribir "*El sueldo 3 es el mayor"			
+		FinSi		
+	FinSi
 	
 FinAlgoritmo
