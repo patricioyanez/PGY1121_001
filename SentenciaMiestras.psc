@@ -2,7 +2,7 @@ Algoritmo EjemploMientras
 	Definir i Como Entero
 	i = 1
 	Mientras i < 6 Hacer
-		Escribir "Hola"
+		Escribir "Hola ", i
 		i = i + 1
 	FinMientras
 	
