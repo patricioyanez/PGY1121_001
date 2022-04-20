@@ -9,4 +9,4 @@ elif b > a:
 else:
     print("Ambos valores son iguales")
 
-    print("************ FIN PROGRAMA")
+print("************ FIN PROGRAMA")
