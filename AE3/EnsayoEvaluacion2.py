@@ -50,3 +50,6 @@ while opcion != 4:
             tipo = "GOLD"
         elif tipo == "3":
             tipo = "SILVER"
+
+        fila = [rut, nombre, direccion, comuna, correo, edad, genero, celular,tipo]
+        clientes.append(fila)
