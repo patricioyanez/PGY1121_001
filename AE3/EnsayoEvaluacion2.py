@@ -36,6 +36,9 @@ while opcion != 4:
     elif opcion == 1:
         try:
             rut         = int(input("ingrese su rut         : "))
+
+            if rut < 4000000 or rut > 99999999:
+                raise("El rut no es válido")
         except:
             print("\n***** El rut no es válido *****")
             input("Presione enter para continuar.....")
@@ -53,7 +56,7 @@ while opcion != 4:
             continue 
         
         
-        edad        = input("ingrese su edad        : ")
+        edad        = int(input("ingrese su edad        : "))
         if edad < 0 or edad > 110:
             print("\n***** La edad no es válida *****")
             input("Presione enter para continuar.....")
@@ -81,5 +84,60 @@ while opcion != 4:
             input("Presione enter para continuar.....")
             continue 
         
-        fila = [rut, nombre, direccion, comuna, correo, edad, genero, celular,tipo]
+        fila = [rut, nombre, direccion, comuna, correo, edad, genero, celular,tipo, suscripcion]
         clientes.append(fila)
+    
+    elif opcion == 2:
+        try:
+            rut = int(input("ingrese su rut : "))
+
+            if rut < 4000000 or rut > 99999999:
+                raise("El rut no es válido")
+        except:
+            print("\n***** El rut no es válido *****")
+            input("Presione enter para continuar.....")
+            continue
+        
+        fueEncontrado = False
+        for cliente in clientes:
+            if cliente[0]==rut:
+                fueEncontrado = True
+                cliente.append('25-05-2022')
+                print("Rut encontrado. Fecha agregada")
+                input("Presione enter para continuar.....")
+                break
+        
+        if not fueEncontrado:
+            print("Rut no encontrado")
+
+    elif opcion == 3:
+        try:
+            rut = int(input("ingrese su rut : "))
+
+            if rut < 4000000 or rut > 99999999:
+                raise("El rut no es válido")
+        except:
+            print("\n***** El rut no es válido *****")
+            input("Presione enter para continuar.....")
+            continue
+        
+        clienteEncontrado = []
+        for cliente in clientes:
+            if cliente[0]==rut:
+                clienteEncontrado =  cliente
+                break
+        
+        if len(clienteEncontrado) != 0:
+            print("\n==== Datos del usuario encontrado ====")
+            print("Rut              :", clienteEncontrado[0])
+            print("Nombre           :", clienteEncontrado[1])
+            print("Dirección        :", clienteEncontrado[2])
+            print("Comuna           :", clienteEncontrado[3])
+            print("Correo           :", clienteEncontrado[4])
+            print("Edad             :", clienteEncontrado[5])
+            print("Genero           :", clienteEncontrado[6])
+            print("Celular          :", clienteEncontrado[7])
+            print("Tipo             :", clienteEncontrado[8])
+            print("Fecha Suscripción:", clienteEncontrado[11])
+    
+    input("Presione enter para continuar")
