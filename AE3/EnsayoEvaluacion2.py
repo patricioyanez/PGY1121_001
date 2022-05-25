@@ -34,13 +34,39 @@ while opcion != 4:
     if opcion == 4:
         print("Adios!!!")
     elif opcion == 1:
-        rut         = input("ingrese su rut         : ")
+        try:
+            rut         = int(input("ingrese su rut         : "))
+        except:
+            print("\n***** El rut no es válido *****")
+            input("Presione enter para continuar.....")
+            continue
+
         nombre      = input("ingrese su nombre      : ")
         direccion   = input("ingrese su direccion   : ")
         comuna      = input("ingrese su comuna      : ")
+
         correo      = input("ingrese su correo      : ")
+        
+        if correo.count("@") != 1:
+            print("\n***** El correo no es válido *****")
+            input("Presione enter para continuar.....")
+            continue 
+        
+        
         edad        = input("ingrese su edad        : ")
-        genero      = input("ingrese su genero      : ")
+        if edad < 0 or edad > 110:
+            print("\n***** La edad no es válida *****")
+            input("Presione enter para continuar.....")
+            continue 
+
+        genero      = input("ingrese su genero(F o M):")
+        genero = genero.upper()
+        if genero != 'F' or genero != 'M':
+            print("\n***** El género no es válida *****")
+            input("Presione enter para continuar.....")
+            continue 
+
+
         celular     = input("ingrese su celular     : ")
         tipo        = input("ingrese su tipo: 1.-PREMIUM 2.-GOLD 3.-SILVER:")
 
@@ -50,6 +76,10 @@ while opcion != 4:
             tipo = "GOLD"
         elif tipo == "3":
             tipo = "SILVER"
-
+        else:
+            print("\n***** El Tipo no es válido *****")
+            input("Presione enter para continuar.....")
+            continue 
+        
         fila = [rut, nombre, direccion, comuna, correo, edad, genero, celular,tipo]
         clientes.append(fila)
