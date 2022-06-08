@@ -9,6 +9,10 @@ arreglo = num.arange(4,8) # 4 al 7
 print(arreglo)
 arreglo = num.arange(2,11,2) # 2 al 10
 print(arreglo)
+arreglo = num.arange(1,11,2) # 2 al 10
+print(arreglo)
+arreglo = num.arange(0,101,5) # 2 al 10
+print(arreglo)
 ## comprobamos que tipo de datos es
 print(type(arreglo)) 
 
